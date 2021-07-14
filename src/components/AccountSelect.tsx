@@ -55,7 +55,6 @@ const AccountSelect = ({
         Deposit first item in your wallet
       </Button>
 
-      {/* We need lending protocol */}
       <Button onClick={() => setBorrowModal(true)}>Borrow $.03</Button>
 
       <Button onClick={() => setSettleModal(true)}>

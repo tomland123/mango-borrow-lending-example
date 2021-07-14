@@ -15,7 +15,7 @@ const BorrowModal = ({
   const borrow = async () => {
     setLoading(true);
     await mangoObject.borrow({
-      marginAccount: ownerMarginAccounts[1],
+      marginAccount: ownerMarginAccounts[0],
       token: new PublicKey(symbols["USDC"]),
       withdrawQuantity: 0.03,
     });
