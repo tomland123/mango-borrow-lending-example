@@ -65,16 +65,20 @@ const AccountSelect = ({
         <Modal
           title={"Deposit Modal"}
           visible={depositModal}
-          handleOk={() =>
+          handleOk={() => {
+            setLoading(true);
             mangoObject.deposit({
               tokenDetail: mangoObject?.mangoTokenInfo?.activeWallets?.[0],
               quantity: 0.01,
-            })
-          }
+            });
+            setLoading(false);
+
+            setDepositModal(false);
+          }}
           handleCancel={() => setDepositModal(false)}
         >
           <div>
-            Deposit Some {mangoObject?.mangoTokenInfo?.activeWallets?.[0].type}
+            Deposit 0.01 {mangoObject?.mangoTokenInfo?.activeWallets?.[0].type}
           </div>
         </Modal>
       )}
